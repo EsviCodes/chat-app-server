@@ -1,9 +1,9 @@
 const { Router } = require("express");
 const { toJWT, toData } = require("./jwt");
 const bcrypt = require("bcrypt");
-const User = require("../user/user-model");
-const Journal = require("../journal/journal-model");
-const journalRouter = require("../journal/journal-router");
+const User = require("../users/user-model");
+// const Journal = require("../journal/journal-model");
+// const journalRouter = require("../journal/journal-router");
 
 const router = new Router();
 

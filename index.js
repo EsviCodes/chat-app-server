@@ -2,6 +2,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const userRouter = require("./users/user-router");
+const authRouter = require("./auth/auth-router");
+const authMiddleware = require("./auth/authMiddleware");
 
 // Routers
 const streamRouter = require("./stream/stream-router");
@@ -16,6 +18,8 @@ app
   .use(jsonParser)
   .use(streamRouter)
   .use(userRouter)
+  .use(authRouter)
+  .use(authMiddleware)
   .get("/", (req, res) => {
     console.log("Hello World");
     res.status(200);
